@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+.practice\ only
 
 # Distribution / packaging
 .Python

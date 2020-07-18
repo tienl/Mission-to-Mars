@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <title>Mission to Mars</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+   crossorigin="anonymous">
+   <style>
+   body {
+    background-color: rgb(84, 82, 78);
+    color: black;
+    padding: 20px;}
+    table{
+        border:1px solid black;
+        margin-top:20px!important;}
+    table th, table tbody, table td, table tr, table thead{
+        border:1px solid black!important;}
+   </style>
+ </head>
+<body>
+     <div class="jumbotron text-center" style="background-image:
+       url(https://cdna.artstation.com/p/assets/images/images/023/966/898/4k/jx-saber-shot-4-v3.jpg);
+       height: 400px;
+       background-position: center;
+       background-size: cover;">
+       <h1>Mission to Mars</h1>
+       <p><a class="btn btn-dark btn-lg"
+          href="/scrape"
+          role="button">Scrape New Data</a></p>
+     </div>
+       <!-- Latest Mars News -->
+       <div class="container-fluid">
+           <div class="row" style="background-color: rgb(84, 82, 78)" id="mars-news">
+               <div class="media">
+                   <div class="media-body">
+                     <h2>Latest Mars News:</h2>
+                     <h3>{{mars.news_title}}</h3>
+                     <p> {{mars.news_paragraph}}</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+  <hr/>
+       <!-- Featured Image -->
+           <div class="row" style="background-color: rgb(84, 82, 78)" id="mars-featured-image">
+                <div class="col-md-8">
+                    <h2>Featured Mars Image</h2>
+                         <img
+                            src="{{ mars.featured_image }}"
+                            style="max-width:100%;
+                            max-height: auto;"
+                            alt="Mars Featured Image"
+                          />
+                </div>
+
+                <!-- Mars Facts -->
+                <div class="col-md-4">
+                 <div class="row" id="mars-facts">
+                   <h2>Mars Facts</h2>
+                    <table class="table table-bordered">
+                      {{ mars.facts | safe }}
+                    </table>
+                 </div>
+                </div>
+            </div>
+  <hr/>
+  <!--hemisphere images -->
+  <div class="container-fluid">
+      <div class="row" style="background-color: rgb(84, 82, 78)" id="mars-news">
+          <div class="media">
+              <div class="media-body">
+                <h2>The 4 Mars Hemisphere images</h2>
+                <!-- 4 hemisphere -->
+                <div class="container-fluid">
+                  <div class="row" id="Hemisphere-images">
+                            <div class="col-md-6">
+                              <h5>{{mars.title1}}</h5>
+                              <a href="/cerb" class = "thumbnail">
+                               <img
+                                src="{{mars.thumb1}}"
+                                alt="thumbnail 1"
+                                />
+                                <a href = "/cerb" class = "btn btn-primary" role = "button">
+                                    View full size
+                                </a>
+                              </a>
+                            </div>
+                            <div class="col-md-6">
+                              <h5>{{mars.title2}}</h5>
+                              <a href="/schi">
+                               <img
+                                src="{{mars.thumb2}}"
+                                class="img-responsive"
+                                alt="Responsive image"
+                                />
+                                <a href = "/cerb" class = "btn btn-primary" role = "button">
+                                    View full size
+                                </a>
+                              </a>
+                            </div>
+                            <div class="col-md-6">
+                              <h5>{{mars.title3}}</h5>
+                              <a href="/syrt">
+                               <img
+                                src="{{mars.thumb3}}"
+                                class="img-responsive"
+                                alt="Responsive image"
+                                />
+                                <a href = "/cerb" class = "btn btn-primary" role = "button">
+                                    View full size
+                                </a>
+                              </a>
+                            </div>
+                            <div class="col-md-6">
+                              <h5>{{mars.title4}}</h5>
+                              <a href="/vall">
+                               <img
+                                src="{{mars.thumb4}}"
+                                class="img-responsive"
+                                alt="Responsive image"
+                                />
+                                <a href = "/cerb" class = "btn btn-primary" role = "button">
+                                    View full size
+                                </a>
+                              </a>
+                            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ </body>
+</html>
